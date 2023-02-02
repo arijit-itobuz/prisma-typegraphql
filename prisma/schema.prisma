@@ -11,7 +11,9 @@ datasource db {
 }
 
 generator typegraphql {
-  provider = "typegraphql-prisma"
+  provider           = "typegraphql-prisma"
+  output             = "../generated/client"
+  emitTranspiledCode = false
 }
 
 model User {
