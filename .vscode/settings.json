@@ -1,7 +1,17 @@
 {
   "editor.tabSize": 2,
   "editor.renderWhitespace": "trailing",
-  "editor.rulers": [130],
+  "editor.rulers": [
+    130
+  ],
+  "explorer.autoReveal": false,
+  "explorer.compactFolders": false,
+  "terminal.integrated.scrollback": 100000000,
+  "[javascript]": {
+    "editor.defaultFormatter": "rome.rome"
+  },
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.autopep8"
+  },
   "liveServer.settings.port": 5501,
-  "prettier.printWidth": 130
 }
