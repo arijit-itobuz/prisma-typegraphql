@@ -2,6 +2,7 @@ import 'reflect-metadata';
 import express, { NextFunction, Request, Response } from 'express';
 import { ApolloServer } from 'apollo-server-express';
 import { buildSchema, Query, Resolver } from 'type-graphql';
+import { context } from '../context';
 
 /* dummy */
 @Resolver()
@@ -31,6 +32,7 @@ async function server() {
   });
 }
 
-server().catch((error) => {
+server().catch(async (error) => {
   console.log('🚀 server error', error);
+  await context.prisma.$disconnect();
 });
