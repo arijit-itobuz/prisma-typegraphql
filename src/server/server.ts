@@ -2,6 +2,7 @@ import 'reflect-metadata';
 import express, { NextFunction, Request, Response } from 'express';
 import { ApolloServer } from 'apollo-server-express';
 import { buildSchema, Query, Resolver } from 'type-graphql';
+import { PrismaClient } from '.prisma/client';
 
 /* dummy */
 @Resolver()
@@ -13,7 +14,7 @@ class DummyResolver {
 }
 /* dummy */
 
-async function main() {
+async function server() {
   const schema = await buildSchema({
     resolvers: [DummyResolver],
   });
@@ -31,4 +32,6 @@ async function main() {
   });
 }
 
-main();
+server().catch((error) => {
+  console.log('🚀 server error', error);
+});

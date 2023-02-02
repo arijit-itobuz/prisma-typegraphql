@@ -40,3 +40,8 @@ model Role {
 
   @@map("roles")
 }
+
+enum RoleType {
+  User
+  Admin
+}
