@@ -2,7 +2,6 @@ import 'reflect-metadata';
 import express, { NextFunction, Request, Response } from 'express';
 import { ApolloServer } from 'apollo-server-express';
 import { buildSchema, Query, Resolver } from 'type-graphql';
-import { PrismaClient } from '.prisma/client';
 
 /* dummy */
 @Resolver()
