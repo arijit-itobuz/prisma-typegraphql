@@ -2,12 +2,16 @@ import 'reflect-metadata';
 import express, { NextFunction, Request, Response } from 'express';
 import { ApolloServer } from 'apollo-server-express';
 import { buildSchema, Query, Resolver } from 'type-graphql';
-import { context } from '../context';
+import { context } from '../../prisma/context';
 
 /* dummy */
 @Resolver()
 class DummyResolver {
-  @Query(() => String, { name: 'dummyName', nullable: true, description: 'desc' })
+  @Query(() => String, {
+    name: 'dummyName',
+    nullable: true,
+    description: 'desc',
+  })
   async dummy() {
     return 'dummy';
   }
