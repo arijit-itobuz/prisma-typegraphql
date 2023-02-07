@@ -10,7 +10,7 @@
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
     "outDir": "./dist",
-    "rootDirs": ["./src", "./prisma"],
+    "rootDirs": ["./src"],
     // "moduleResolution": "node" 
   },
   "exclude": ["./node_modules", "./tests", "./dist"]
