@@ -1,12 +1,13 @@
 import 'reflect-metadata';
 import express, { NextFunction, Request, Response } from 'express';
 import { ApolloServer } from 'apollo-server-express';
-import { buildSchema, Query, Resolver } from 'type-graphql';
+import { buildSchema } from 'type-graphql';
 import { context } from '../../prisma/context';
+import { resolvers } from '../graphql/resolver/resolvers';
 
 async function server() {
   const schema = await buildSchema({
-    resolvers: [],
+    resolvers: resolvers(),
   });
 
   const server = new ApolloServer({ schema });
