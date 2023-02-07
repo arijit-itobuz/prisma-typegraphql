@@ -1,10 +1,10 @@
-import { Mutation, Resolver } from "type-graphql";
+// import { Mutation, Resolver } from "type-graphql";
 
-@Resolver
-export class UserResolver {
+// @Resolver
+// export class UserResolver {
 
-  @Mutation()
-  async createUser() {
-    return 'user'
-  }
-}
+//   @Mutation()
+//   async createUser() {
+//     return 'user'
+//   }
+// }
