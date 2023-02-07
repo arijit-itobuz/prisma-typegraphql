@@ -5,7 +5,7 @@ import { User } from '../../../../prisma/generated/type-graphql';
 @Resolver(User)
 export class UserResolver {
   @Mutation(() => User)
-  async userSignup(@Args({validate: false}) args: UserSignupArgs) {
+  async userSignup(@Args() args: UserSignupArgs) {
     const service = new UserService();
     return service.userSignup(args);
   }
