@@ -4,23 +4,9 @@ import { ApolloServer } from 'apollo-server-express';
 import { buildSchema, Query, Resolver } from 'type-graphql';
 import { context } from '../../prisma/context';
 
-/* dummy */
-@Resolver()
-class DummyResolver {
-  @Query(() => String, {
-    name: 'dummyName',
-    nullable: true,
-    description: 'desc',
-  })
-  async dummy() {
-    return 'dummy';
-  }
-}
-/* dummy */
-
 async function server() {
   const schema = await buildSchema({
-    resolvers: [DummyResolver],
+    resolvers: [],
   });
 
   const server = new ApolloServer({ schema });
