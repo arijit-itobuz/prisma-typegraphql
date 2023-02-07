@@ -7,6 +7,7 @@ export interface Context {
 export const context: Context = {
   get prisma() {
     const client = new PrismaClient();
+    
     return client;
   },
 };
