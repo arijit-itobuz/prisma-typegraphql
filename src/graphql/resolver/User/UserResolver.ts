@@ -1,4 +1,4 @@
-import { Args, Mutation, Resolver } from 'type-graphql';
+import { Args, Ctx, Mutation, Resolver } from 'type-graphql';
 import { UserService } from '../../service/User/UserService';
 import { UserSignupArgs } from '../../args/User/UserArgs';
 import { User } from '../../../../prisma/generated/type-graphql';
