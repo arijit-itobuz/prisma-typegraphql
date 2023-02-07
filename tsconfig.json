@@ -11,7 +11,7 @@
     "forceConsistentCasingInFileNames": true,
     "outDir": "./dist",
     "rootDirs": ["./src", "./prisma"],
-    "moduleResolution": "node"
+    // "moduleResolution": "node" 
   },
   "exclude": ["./node_modules", "./tests", "./dist"]
 }
