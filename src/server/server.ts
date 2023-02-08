@@ -4,18 +4,17 @@ import { ApolloServer } from 'apollo-server-express';
 import { buildSchema } from 'type-graphql';
 import { context } from '../../prisma/context';
 import { resolvers } from '../graphql/resolver/resolvers';
-import { createContext } from '../utils/createContext';
+import { serverContext } from '../utils/serverContext';
 
 async function server() {
   const schema = await buildSchema({
     resolvers: resolvers(),
-    validate: false,
+    validate: true,
   });
 
   const server = new ApolloServer({
     schema,
-    context: ({ req }) => createContext({ req }),
-    validationRules: [],
+    context: ({ req }) => serverContext({ req }),
   });
 
   const app = express();

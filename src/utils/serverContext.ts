@@ -3,7 +3,7 @@ import { context } from '../../prisma/context';
 import * as jwt from 'jsonwebtoken';
 import {config} from '../config/config'
 
-export async function createContext({ req }: { req: Request }) {
+export async function serverContext({ req }: { req: Request }) {
   const authHeader = req.headers.authorization;
   const token = authHeader ? String(authHeader).split(' ')[1] : null;
 
