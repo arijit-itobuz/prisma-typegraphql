@@ -23,6 +23,7 @@ async function server() {
   });
 
   await server.start();
+
   app.use(
     '/graphql',
     express.json(),
@@ -32,6 +33,7 @@ async function server() {
   );
 
   await new Promise<void>((resolve) => httpServer.listen({ port: config.APP.PORT }, resolve));
+  
   console.log(`🚀 Server ready at http://localhost:${config.APP.PORT}/graphql`);
 }
 
